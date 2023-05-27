@@ -5,7 +5,7 @@ body {
   }
   
   #navbar-pinterest {
-    background-color: #333;
+    background-color: #252525;
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -13,14 +13,20 @@ body {
     padding: 10px;
     position: fixed;
     top: 0;
-    width: 100%;
+    width: calc(100% - 20px);
   }
   
+  #pinterest-icon{
+    margin-right: 10px;
+  }
+
   .finder {
     flex: 1;
     margin-right: 10px;
   }
-  
+  #find{
+    display: none;
+  }
   .finder input {
     width: 100%;
     padding: 5px;
@@ -33,21 +39,20 @@ body {
   #profile-img {
     width: 30px;
     height: 30px;
-    background-color: #ccc;
     margin-left: 10px;
   }
   
   #content {
-    margin-top: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    margin-top: 60px;
+    display: grid;
+    grid: auto-flow dense / 1fr 1fr 1fr;
     padding: 10px;
   }
   
   .card-image {
-    width: 200px;
-    margin-bottom: 20px;
+    max-width: 425px;
+    height: auto;
+    margin: 5px;
   }
   
   .card-image img {
@@ -62,17 +67,26 @@ body {
   }
   
   .card-image:hover .card-buttons {
-    display: flex;
+    display: flow-root;
+    float: right;
   }
   
   @media (max-width: 768px) {
     #navbar-pinterest {
-      flex-direction: column;
-      align-items: flex-start;
+      position: fixed;
+      top: auto;
+      bottom: 0;
     }
-    
+    #find{
+      display: flex;
+      margin-left: 10px;
+    }
     .finder {
-      margin-bottom: 10px;
+      display: none;
     }
+    #content {
+      margin-top: 0px;
+    }
+
   }
   
